@@ -27,6 +27,11 @@ Test automation engineer:Writes and maintains test scripts for automated testing
 DevOps engineer: Builds continuous integration and continuous delivery (CI/CD) pipelines for faster delivery
 
 6. Technology stack :
-Django: handles the backend, providing structure for building web applications, handling requests, routing, and database management.
-PostgreSQL: is a robust, open-source relational database that Django can integrate with to store and query data efficiently.
-GraphQL: offers a flexible, efficient query language for APIs, allowing clients to request only the data they need, unlike REST APIs, which can be more rigid.
+Django: A high-level Python web framework used for building the RESTful API.
+Django REST Framework: Provides tools for creating and managing RESTful APIs.
+PostgreSQL: A powerful relational database used for data storage.
+GraphQL: Allows for flexible and efficient querying of data.
+Celery: For handling asynchronous tasks such as sending notifications or processing payments.
+Redis: Used for caching and session management.
+Docker: Containerization tool for consistent development and deployment environments.
+CI/CD Pipelines: Automated pipelines for testing and deploying code changes.
