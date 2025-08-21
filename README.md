@@ -8,3 +8,20 @@ Deepen my understanding of backend architecture and database design principles.
 Implement advanced security measures for API development.
 Gain proficiency in designing and managing CI/CD pipelines for efficient deployment.
 Strengthen their ability to document and plan complex software projects effectively Develop an understanding of integrating technologies like Django, MySQL, and GraphQL in a unified ecosystem.
+
+ Table of Contents
+1. [Project Description](#project-description)
+2. [Team Roles](#team-roles)
+3. [Installation Instructions](#installation-instructions)
+4. [License](#license)
+
+5. Team Roles :
+ Business analyst (BA): Understands customer’s business processes, Translates customer business needs into requirements
+Product owner (PO): Makes sure the final product meets customer requirement
+Project manager (PM): Manages and motivates the software development team
+UI/UX designer: Creates user journeys for the best user experience and highest conversion rates
+Software architect: Selects appropriate tools and platforms to implement the product vision
+Software developer: solves any technical problems emerging during the development lifecycle
+Quality assurance (QA) engineer: Spots functional and non-functional defects
+Test automation engineer:Writes and maintains test scripts for automated testing
+DevOps engineer: Builds continuous integration and continuous delivery (CI/CD) pipelines for faster delivery
