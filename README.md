@@ -39,3 +39,108 @@ This project utilizes the following technologies:
 - **Docker**: Containerization tool for consistent development and deployment environments.
 - **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
 
+- Certainly! Here's the full **entities and relationships** description formatted in **Markdown**:
+
+```markdown
+## Entities and Relationships
+
+### 1. User
+**Important Fields:**
+- `id`: Unique identifier for the user  
+- `name`: Full name of the user  
+- `email`: Used for login and communication  
+- `password_hash`: Securely stored password  
+- `role`: E.g., guest, host, admin  
+
+**Relationships:**
+- A **user** can create **multiple properties** (if host).
+- A **user** can make **multiple bookings**.
+- A **user** can leave **multiple reviews**.
+
+---
+
+### 2. Property
+**Important Fields:**
+- `id`: Unique property ID  
+- `user_id`: References the host (user)  
+- `title`: Name of the property  
+- `location`: Address or coordinates  
+- `price_per_night`: Cost to book per night  
+
+**Relationships:**
+- A **property** belongs to one **user** (host).
+- A **property** can have multiple **bookings**.
+- A **property** can have multiple **reviews**.
+
+---
+
+### 3. Booking
+**Important Fields:**
+- `id`: Unique booking ID  
+- `user_id`: The guest who made the booking  
+- `property_id`: The property being booked  
+- `start_date`: Booking start  
+- `end_date`: Booking end  
+- `status`: E.g., pending, confirmed, cancelled  
+
+**Relationships:**
+- A **booking** belongs to one **user** (guest).
+- A **booking** belongs to one **property**.
+- A **booking** may have one or more **payments**.
+
+---
+
+### 4. Payment
+**Important Fields:**
+- `id`: Unique payment ID  
+- `booking_id`: Associated booking  
+- `amount`: Total amount paid  
+- `payment_method`: E.g., credit card, PayPal  
+- `status`: Paid, failed, refunded  
+
+**Relationships:**
+- A **payment** is linked to one **booking**.
+- A **booking** can have **one or more payments**.
+
+---
+
+### 5. Review
+**Important Fields:**
+- `id`: Unique review ID  
+- `user_id`: Reviewer (guest)  
+- `property_id`: Property being reviewed  
+- `rating`: Numeric rating (e.g., 1–5)  
+- `comment`: Text feedback  
+
+**Relationships:**
+- A **review** belongs to one **user**.
+- A **review** belongs to one **property**.
+- A **property** can have **multiple reviews**.
+
+---
+
+## Entity Relationship Summary
+
+- A **User** can:
+  - List **multiple properties**
+  - Make **multiple bookings**
+  - Leave **multiple reviews**
+
+- A **Property**:
+  - Belongs to one **user** (host)
+  - Has many **bookings**
+  - Has many **reviews**
+
+- A **Booking**:
+  - Is made by one **user**
+  - Is for one **property**
+  - Has one or more **payments**
+
+- A **Payment**:
+  - Belongs to one **booking**
+
+- A **Review**:
+  - Is written by one **user**
+  - Is for one **property*
+
+
