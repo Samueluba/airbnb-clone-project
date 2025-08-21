@@ -39,108 +39,68 @@ This project utilizes the following technologies:
 - **Docker**: Containerization tool for consistent development and deployment environments.
 - **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
 
-- Certainly! Here's the full **entities and relationships** description formatted in **Markdown**:
+## Database Design
 
-```markdown
-## Entities and Relationships
+This section outlines the core entities and their relationships in the project database.
 
-### 1. User
-**Important Fields:**
-- `id`: Unique identifier for the user  
-- `name`: Full name of the user  
-- `email`: Used for login and communication  
-- `password_hash`: Securely stored password  
-- `role`: E.g., guest, host, admin  
+### 🔹 Users
+Represents individuals using the platform.
 
-**Relationships:**
-- A **user** can create **multiple properties** (if host).
-- A **user** can make **multiple bookings**.
-- A **user** can leave **multiple reviews**.
+**Key Fields:**
+- `id`: Unique identifier for each user
+- `name`: Full name of the user
+- `email`: Email address (must be unique)
+- `password`: Encrypted password for authentication
+- `role`: Type of user (e.g., host, guest)
 
----
+### 🔹 Properties
+Represents rental listings created by users.
 
-### 2. Property
-**Important Fields:**
-- `id`: Unique property ID  
-- `user_id`: References the host (user)  
-- `title`: Name of the property  
-- `location`: Address or coordinates  
-- `price_per_night`: Cost to book per night  
+**Key Fields:**
+- `id`: Unique identifier for each property
+- `title`: Title or name of the property
+- `description`: Detailed description of the property
+- `location`: Address or city
+- `owner_id`: References the user (host) who owns the property
 
-**Relationships:**
-- A **property** belongs to one **user** (host).
-- A **property** can have multiple **bookings**.
-- A **property** can have multiple **reviews**.
+### 🔹 Bookings
+Represents reservations made by users.
 
----
+**Key Fields:**
+- `id`: Unique identifier for each booking
+- `user_id`: References the user (guest) who made the booking
+- `property_id`: References the property being booked
+- `start_date`: When the booking begins
+- `end_date`: When the booking ends
 
-### 3. Booking
-**Important Fields:**
-- `id`: Unique booking ID  
-- `user_id`: The guest who made the booking  
-- `property_id`: The property being booked  
-- `start_date`: Booking start  
-- `end_date`: Booking end  
-- `status`: E.g., pending, confirmed, cancelled  
+### 🔹 Reviews
+Represents user feedback on properties.
 
-**Relationships:**
-- A **booking** belongs to one **user** (guest).
-- A **booking** belongs to one **property**.
-- A **booking** may have one or more **payments**.
+**Key Fields:**
+- `id`: Unique identifier for each review
+- `user_id`: References the user who wrote the review
+- `property_id`: References the property being reviewed
+- `rating`: Numerical rating (e.g., 1–5)
+- `comment`: Text review
 
----
+### 🔹 Payments
+Represents payment transactions related to bookings.
 
-### 4. Payment
-**Important Fields:**
-- `id`: Unique payment ID  
-- `booking_id`: Associated booking  
-- `amount`: Total amount paid  
-- `payment_method`: E.g., credit card, PayPal  
-- `status`: Paid, failed, refunded  
-
-**Relationships:**
-- A **payment** is linked to one **booking**.
-- A **booking** can have **one or more payments**.
+**Key Fields:**
+- `id`: Unique identifier for each payment
+- `booking_id`: References the booking being paid for
+- `amount`: Payment amount
+- `payment_method`: Type of payment (e.g., credit card, PayPal)
+- `status`: Status of the payment (e.g., completed, pending)
 
 ---
 
-### 5. Review
-**Important Fields:**
-- `id`: Unique review ID  
-- `user_id`: Reviewer (guest)  
-- `property_id`: Property being reviewed  
-- `rating`: Numeric rating (e.g., 1–5)  
-- `comment`: Text feedback  
+### 🔗 Entity Relationships
 
-**Relationships:**
-- A **review** belongs to one **user**.
-- A **review** belongs to one **property**.
-- A **property** can have **multiple reviews**.
-
----
-
-## Entity Relationship Summary
-
-- A **User** can:
-  - List **multiple properties**
-  - Make **multiple bookings**
-  - Leave **multiple reviews**
-
-- A **Property**:
-  - Belongs to one **user** (host)
-  - Has many **bookings**
-  - Has many **reviews**
-
-- A **Booking**:
-  - Is made by one **user**
-  - Is for one **property**
-  - Has one or more **payments**
-
-- A **Payment**:
-  - Belongs to one **booking**
-
-- A **Review**:
-  - Is written by one **user**
-  - Is for one **property*
-
+- A **User** can have multiple **Properties** (if they are a host).
+- A **User** can make multiple **Bookings** (as a guest).
+- A **Booking** belongs to one **Property** and one **User**.
+- A **User** can write multiple **Reviews** for different **Properties**.
+- Each **Review** is linked to one **User** and one **Property**.
+- A **Payment** is linked to one **Booking**.
 
