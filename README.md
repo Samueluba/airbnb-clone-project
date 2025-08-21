@@ -12,7 +12,7 @@ Strengthen their ability to document and plan complex software projects effectiv
  Table of Contents
 1. [Project Description](#project-description)
 2. [Team Roles](#team-roles)
-3. [Installation Instructions](#installation-instructions)
+3. Technology stack
 4. [License](#license)
 
 5. Team Roles :
@@ -25,3 +25,8 @@ Software developer: solves any technical problems emerging during the developmen
 Quality assurance (QA) engineer: Spots functional and non-functional defects
 Test automation engineer:Writes and maintains test scripts for automated testing
 DevOps engineer: Builds continuous integration and continuous delivery (CI/CD) pipelines for faster delivery
+
+Technology stack.
+Django: handles the backend, providing structure for building web applications, handling requests, routing, and database management.
+PostgreSQL: is a robust, open-source relational database that Django can integrate with to store and query data efficiently.
+GraphQL: offers a flexible, efficient query language for APIs, allowing clients to request only the data they need, unlike REST APIs, which can be more rigid.
