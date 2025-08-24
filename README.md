@@ -13,9 +13,11 @@ Strengthen their ability to document and plan complex software projects effectiv
 1. [Project Description](#project-description)
 2. [Team Roles](#team-roles)
 3. Technology stack
-4. [License](#license)
+4. feature breakdown
+5. security
+6. [License](#license)
 
-5. Team Roles :
+7. Team Roles :
  Business analyst (BA): Understands customer’s business processes, Translates customer business needs into requirements
 Product owner (PO): Makes sure the final product meets customer requirement
 Project manager (PM): Manages and motivates the software development team
@@ -120,3 +122,36 @@ Provides a secure and reliable way to handle online transactions. Supports multi
 
 ### 🔹 Review System
 Allows guests to leave feedback and ratings for properties after their stay. This feature builds trust and helps future users make informed decisions.
+
+‎## 🔐 API Security
+‎
+‎Security is a top priority in this project to ensure that sensitive data and financial transactions are protected. The following measures are implemented:
+‎
+‎### 1. Authentication  
+‎- **What it is**: Ensures that only registered users can access the system by using secure login methods (e.g., JWT tokens, OAuth2).  
+‎- **Why it matters**: Prevents unauthorized access to user accounts, safeguarding personal data and private information.  
+‎
+‎### 2. Authorization  
+‎- **What it is**: Controls what authenticated users can do (e.g., guests can book, hosts can manage properties, admins can oversee).  
+‎- **Why it matters**: Ensures users only have access to the resources and actions they are permitted to, preventing misuse or fraud.  
+‎
+‎### 3. Rate Limiting  
+‎- **What it is**: Restricts the number of requests a user or IP can make within a certain time window.  
+‎- **Why it matters**: Protects the API from abuse, brute-force login attempts, and denial-of-service (DoS) attacks.  
+‎
+‎### 4. Data Encryption  
+‎- **What it is**: All sensitive data (e.g., passwords, payment details) is encrypted in storage and transmitted over HTTPS.  
+‎- **Why it matters**: Protects user credentials and payment information from interception or theft.  
+‎
+‎### 5. Secure Payments  
+‎- **What it is**: Payments are processed through trusted gateways (e.g., Stripe, Paystack, or Flutterwave) with PCI DSS compliance.  
+‎- **Why it matters**: Prevents fraud, ensures safe handling of financial data, and builds user trust in the platform.  
+‎
+‎### 6. Input Validation & Sanitization  
+‎- **What it is**: Ensures all user input is validated and sanitized to prevent SQL Injection, XSS, and other attacks.  
+‎- **Why it matters**: Maintains data integrity and prevents attackers from injecting malicious code into the system.  
+‎
+‎---
+‎
+‎✅ **In summary:** Security is crucial because it protects **user data** (personal info, account details), **financial transactions** (safe and fraud-free payments), and **system availability** (resilient against attacks). Without strong security, both users and the business are at risk.
+‎```
