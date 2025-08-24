@@ -104,3 +104,19 @@ Represents payment transactions related to bookings.
 - Each **Review** is linked to one **User** and one **Property**.
 - A **Payment** is linked to one **Booking**.
 
+## 📌 Feature Breakdown
+
+### 🔹 User Management
+Includes secure authentication, authorization, and profile management. Users can sign up, log in, and update their profiles while ensuring their data is protected.
+
+### 🔹 Property Management
+Property owners can list, update, and manage their properties with detailed descriptions and images. This feature ensures a smooth experience for hosts to maintain accurate and attractive listings.
+
+### 🔹 Booking System
+Enables users to search, reserve, and manage bookings for available properties. The system handles availability, confirmation, and cancellation seamlessly.
+
+### 🔹 Payment Processing
+Provides a secure and reliable way to handle online transactions. Supports multiple payment methods while ensuring data security and fraud prevention.
+
+### 🔹 Review System
+Allows guests to leave feedback and ratings for properties after their stay. This feature builds trust and helps future users make informed decisions.
