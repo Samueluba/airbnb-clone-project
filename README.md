@@ -154,4 +154,23 @@ Allows guests to leave feedback and ratings for properties after their stay. Thi
 ‎---
 ‎
 ‎✅ **In summary:** Security is crucial because it protects **user data** (personal info, account details), **financial transactions** (safe and fraud-free payments), and **system availability** (resilient against attacks). Without strong security, both users and the business are at risk.
-‎```
+
+## ⚙️ CI/CD Pipeline
+
+### What is CI/CD?  
+CI/CD (Continuous Integration and Continuous Deployment) is a process that automates the building, testing, and deployment of the application.  
+- **Continuous Integration (CI)** ensures that code changes are automatically tested and merged, reducing bugs and integration issues.  
+- **Continuous Deployment (CD)** ensures that once code passes tests, it is automatically deployed to the production or staging environment with minimal manual effort.  
+
+### Why it’s important for this project  
+- **Faster development cycles**: Developers can push changes more frequently without breaking the system.  
+- **Reduced errors**: Automated testing catches bugs early before they reach production.  
+- **Consistency**: Ensures the application is deployed in a repeatable and reliable way.  
+- **Scalability**: Makes it easy to handle new features, bug fixes, and updates without downtime.  
+
+### Tools that could be used  
+- **GitHub Actions** – Automates testing, building, and deployment workflows directly from the repository.  
+- **Docker** – Ensures the app runs consistently across different environments using containers.  
+- **Kubernetes** – (Optional) For managing containerized deployments at scale.  
+- **Jenkins / GitLab CI** – Alternative CI/CD tools for automation.  
+- **AWS / Heroku / DigitalOcean** – Platforms for deploying the application in the cloud.  
